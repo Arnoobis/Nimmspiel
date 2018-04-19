@@ -7,6 +7,7 @@ public class Spieler{
 *Name des Spielers
 */
 private String name = "";
+public int anzahlGewinne=0;
 
 /**
 *Konstruktor Spieler
@@ -19,3 +20,4 @@ public String getName(){
 	return name;
 	}
 }
+

@@ -8,40 +8,103 @@ public class SteinhaufenSpiel {
 private Spieler[] spieler;
 private Steinhaufen steinhaufen;
 private int dran;
-private int gewinner;
-private int anzahlSpielrunden;
+private String gewinner;
+private int anzahlSpielrunden=0;
+
+public boolean weiter= true;
+
+Scanner scanner= new Scanner(System.in);
+
+
 
 public static void main ( String [] args){
 
+	//Erzeuge Feld von Spielern
+	//Initialisieren Spieler
+	
 
-	/**Erzeugen Scanner*/
-	Scanner scanner= new Scanner(System.in);
-
-	/**Erzeugen Feld von Spielern*/
-
-	spieler= new Spieler[2];
+	Spieler[] spieler= new Spieler[2];
 	//Bereitstellen Datenspeicher für jeden Spieler
-	spieler[0]= new Spieler();
-	spieler[1]= new Spieler();
-
-	/**Einlesen Spielernamen*/
-	for(int i=0; i<2;i++){
-		System.out.println( "Spieler "+(i+1)+"Gib Deinen Namen ein!");
-		spieler[i].name= scan.nextLine();
-	}
-
-	public int dranSpieler(){
+	spieler[0]= new Spieler(eingabe());
+	spieler[1]= new Spieler(eingabe());
+	
+	//Erzeuge Steinhaufen
+	Steinhaufen steinhaufen= new Steinhaufen();
+	
+	while( weiter=true ){
 		
-		dran= (dran+1)%2
+	
+	//Bestimme Startspieler
+	dran= (int)((Math.random)*2);
+	
+	boolean nochSteineDa;
+		
+	//Spielen
+	While( nochSteineDa true){
+	//Spieler nach Anzahl fragen	
+		System.out.println( "Auf dem Steinhaufen liegen noch"
+			+ getAnzahlSteine()+
+				 "Steine." + spieler[dran].getname() +
+					 ", wieviel Steine möchtest Du vom Steinhaufen nehmen? Wähle zwischen 1 bis 3.");
+	
+	//	Eingabe Spieler
+	int a= scan.nextInt();
+	nochSteineDa = redAnzahl( a );
 	}
 	
-	public int setGewinner(){
+	//Setze Gewinner der Runde
+	setGewinner();
 		
-		gewinner= (dran+1)%2
+		//Weiterspielen?
+		
+		if(weiter= true){
+			steinhaufen.reset();
+		
+		
+		}
+			else{
+				
+				anzahlSpielrunden= spieler[0].anzahlGewinne + spieler[1].anzahlGewinne;
+				if(spieler[0].anzahlGewinne > spieler[1].anzahlGewinne){ gewinner= spieler[0].name};
+				if(spieler[0].anzahlGewinne < spieler[1].anzahlGewinne){ gewinner= spieler[1].name};
+				else{ gewinner= Unentschieden}
+				
+				System.out.println("Gewinner ist:" + gewinner +
+					"\n Anzahl der gespielten Runden:"+ anzahlSpielrunden));
+	
+			}
+			
+			
+			
+			
+		}
+	}
+		
+}
 	}
 }
 
+
+/**Einlesen Spielernamen*/
+public String eingabe(){
+	
+	System.out.println( "Bitte gib Deinen Namen ein!");
+	return scan.nextLine();
 }
+
+public int dranSpieler(){
+		
+	return dran= (dran+1)%2;
+}
+	
+public setGewinner() {
+		
+	spieler[(dran+1)%2].anzahlGewinne++;
+	return;
+	}
+}
+
+
 
 
 	
