@@ -1,11 +1,8 @@
-// Spieler.java
-import Tools.IO.*;
-
 /**
 * Klasse Spieler
 */
 
-public class spieler{
+public class Spieler{
 /** Attribute
 *Name des Spielers
 */

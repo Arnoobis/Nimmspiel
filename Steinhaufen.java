@@ -3,7 +3,7 @@
 *Steinhaufen
 */
 
-public class SteinHaufen{
+public class Steinhaufen{
 /** Attribute: Anzahl der vorhandenen Stein*/
 
 private int anzahlSteine;
