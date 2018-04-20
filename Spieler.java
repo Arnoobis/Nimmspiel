@@ -1,23 +1,24 @@
 /**
-* Klasse Spieler
-*/
+ * Spieler eines Spieles, nicht mutierbar, hält den Spielernamen und kann ihn herausgeben.
+ */
+public class Spieler {
 
-public class Spieler{
-/** Attribute
-*Name des Spielers
-*/
-private String name = "";
-public int anzahlGewinne=0;
+    private String name;
 
-/**
-*Konstruktor Spieler
-*/
-public Spieler( String n){
-	name= n;
-	}
-	
-public String getName(){
-	return name;
-	}
+    /**
+     * Konstruktor
+     * @param name Spielername
+     */
+    public Spieler(String name) {
+        this.name = name;
+    }
+
+    /**
+     * Getter für Spielernamen
+     * @return Spielername
+     */
+    public String getName() {
+        return name;
+    }
+
 }
-

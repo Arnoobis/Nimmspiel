@@ -1,38 +1,32 @@
-//Steinhaufen.java
-/**
-*Steinhaufen
-*/
+public class Steinhaufen {
 
-public class Steinhaufen{
-/** Attribute: Anzahl der vorhandenen Stein*/
+    private int anzahlSteine;
 
-private int anzahlSteine;
+    /**
+     * Konstruktor Steinhaufen
+     */
+    public Steinhaufen() {
+        // Anfangsanzahl der Steine zufällig festgelegt
+        anzahlSteine = Double.valueOf(Math.floor(Math.random() * 10 + 20)).intValue();
+    }
 
-/**Konstruktor Steinhaufen*/
-public Steinhaufen(){
-	
-	//Anfangsanzahl Steine zufällig
-	anzahlSteine= (int)(Math.random()*11)+20;
-	}
+    /**
+     * Getter für Anzahl der Steine3
+     *
+     * @return Anzahl der Steine
+     */
+    public int getAnzahlSteine() {
+        return anzahlSteine;
+    }
 
-/**Instanzmethode getAnzahlSteine*/
+    /**
+     * Nimm!
+     * @param n Anzahl der genommenen Steine
+     * @return true, falls noch Steine vorhanden; false, wenn nicht
+     */
+    public boolean reduziereAnzahlSteine(int n) {
+        anzahlSteine -= n;
+        return anzahlSteine > 0;
+    }
 
-public int getAnzahlSteine(){
-	return anzahlSteine;
-	}
-	
-/**Instanzmethode reduziere Steine*/
-
-public boolean redAnzahlSteine(int n){
-	anzahlSteine = anzahlSteine - n;
-	if(anzahlSteine>0)
-		return true;
-	else
-		return false;
-	}
-
-/**Neue Runde: Reset Steinhaufen*/
-
-public void reset(){
-	}
 }
